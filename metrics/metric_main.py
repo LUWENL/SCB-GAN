@@ -86,37 +86,37 @@ def fid50k_full(opts):
 
 @register_metric
 def fid5k_full(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     fid = frechet_inception_distance.compute_fid(opts, max_real=None, num_gen=5000)
     return dict(fid50k_full=fid)
 
 @register_metric
 def fid50k_clean(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     fid = frechet_inception_distance.compute_fid(opts, max_real=None, num_gen=50000, clean=True)
     return dict(fid50k_full=fid)
 
 @register_metric
 def kid50k_full(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     kid = kernel_inception_distance.compute_kid(opts, max_real=1000000, num_gen=50000, num_subsets=100, max_subset_size=1000)
     return dict(kid50k_full=kid)
 
 @register_metric
 def pr50k3_full(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     precision, recall = precision_recall.compute_pr(opts, max_real=200000, num_gen=50000, nhood_size=3, row_batch_size=10000, col_batch_size=10000)
     return dict(pr50k3_full_precision=precision, pr50k3_full_recall=recall)
 
 @register_metric
 def nn_train(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     nn_images = precision_recall.compute_nn(opts, max_real=1000, num_gen=opts.num_gen, nhood_size=10)
     return {'nn_images': nn_images}
 
 @register_metric
 def sort_likelihood(opts):
-    opts.dataset_kwargs.update(max_size=None, xflip=False)
+    opts.dataset_kwargs.update(max_size=None, xflip=False, mine_aug = False)
     sorted_images = frechet_inception_distance.sort_likelihood(opts, max_real=None, num_gen=opts.num_gen)
     return {'sorted_images': sorted_images}
 
