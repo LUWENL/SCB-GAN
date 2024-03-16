@@ -3,8 +3,7 @@
 <img src="./docs/network.svg" width="700px" height="350px" />
 </p>
 
-## SCB-GAN: A High-quality Small Celestial Body Surface Image Synthesis Method
-### [paper](https://ieeexplore.ieee.org/document/10196052)
+### SCB-GAN: A High-quality Small Celestial Body Surface Image Synthesis Method [[Paper]](https://ieeexplore.ieee.org/document/10196052)
 
 > Abstract: Small celestial body (SCB) exploration is a research hotspot in deep space exploration technology. However, the scarcity of small celestial body surface images severely hinders the development of probe intelligence systems, and it is challenging to redeploy probes to obtain massive images due to the high cost. In recent years, with the growth of deep learning, generative adversarial networks have shown excellent potential in generating real images. This paper presents a high-quality small celestial body surface image synthesis method SCB-GAN, which can generate a massive amount and large diversity of small celestial body surface images that match human perception from a limited dataset. Specifically, we propose MineAug, which can automatically select appropriate data augmentations from the given SCB surface imageset based on an efficient mining mechanism, improving the robustness of the GAN training process. We also add the vision-aided loss to our network to further improve image quality. Through extensive experiments, our method outperforms recent methods under a variety of metrics in terms of visual quality comparison, no-referenced image quality assessment, and human subjective evaluation, which has significant implications for the development of intelligent systems. 
 
